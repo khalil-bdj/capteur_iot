@@ -1848,6 +1848,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 106.68) (xy 138.43 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "284f6087-882b-4311-8eec-13a300d13c0a")
+	)
+	(wire
+		(pts
 			(xy 205.74 92.71) (xy 220.98 92.71)
 		)
 		(stroke
@@ -1895,6 +1905,16 @@
 			(type default)
 		)
 		(uuid "387202ee-36b3-49bd-bcf8-8719ebd5754c")
+	)
+	(wire
+		(pts
+			(xy 140.97 109.22) (xy 134.62 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38e470ed-0a69-465b-91f2-9274c66cf798")
 	)
 	(wire
 		(pts
@@ -1975,6 +1995,16 @@
 			(type default)
 		)
 		(uuid "4777db3e-5c5b-4ace-9ce4-944ee61741c4")
+	)
+	(wire
+		(pts
+			(xy 134.62 106.68) (xy 138.43 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a64bfd6-1a77-4bd7-bcc2-d39952fc001e")
 	)
 	(wire
 		(pts
@@ -2135,6 +2165,16 @@
 			(type default)
 		)
 		(uuid "6da0b4c8-7b67-4ec1-8aec-2ddcb7fbd0f5")
+	)
+	(wire
+		(pts
+			(xy 140.97 99.06) (xy 140.97 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6eaff751-0c5b-4f41-8ef3-a74327a3f627")
 	)
 	(wire
 		(pts
@@ -2408,6 +2448,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 96.52) (xy 152.4 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6c78dd6-a06b-4325-a0b6-d59561cbd930")
+	)
+	(wire
+		(pts
 			(xy 127 80.01) (xy 152.4 80.01)
 		)
 		(stroke
@@ -2575,6 +2625,16 @@
 			(type default)
 		)
 		(uuid "c6d9b442-8b99-422b-ba19-a18726294e55")
+	)
+	(wire
+		(pts
+			(xy 152.4 99.06) (xy 140.97 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7f56af6-14f6-4d01-8332-c0491adc1d3b")
 	)
 	(wire
 		(pts
@@ -3091,6 +3151,77 @@
 			(project "Capteur_courant_IoT"
 				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e"
 					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 129.54 106.68 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "651701ea-eab2-4b30-a44c-69ff034a42b0")
+		(property "Reference" "J1"
+			(at 127 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 127 109.2199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 129.54 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4258d522-44a9-42c4-a5f5-01be12f92120")
+		)
+		(pin "2"
+			(uuid "8f83345c-0f0f-4267-8500-d95154271c03")
+		)
+		(instances
+			(project "Capteur_courant_IoT"
+				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e"
+					(reference "J1")
 					(unit 1)
 				)
 			)
