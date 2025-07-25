@@ -144,6 +144,156 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -986,6 +1136,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 38.1) (xy 120.65 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0142708d-8258-4eb8-8294-c5758a9dd409")
+	)
+	(wire
+		(pts
 			(xy 49.53 127) (xy 63.5 127)
 		)
 		(stroke
@@ -1006,7 +1166,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 101.6) (xy 72.39 101.6)
+			(xy 63.5 101.6) (xy 88.9 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1046,7 +1206,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 38.1) (xy 101.6 38.1)
+			(xy 88.9 38.1) (xy 102.87 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1176,7 +1336,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 38.1) (xy 72.39 38.1)
+			(xy 63.5 38.1) (xy 88.9 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1206,16 +1366,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 101.6) (xy 88.9 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "692f3102-88dc-4f2c-9d5d-4e5fe76848f0")
-	)
-	(wire
-		(pts
 			(xy 63.5 82.55) (xy 63.5 85.09)
 		)
 		(stroke
@@ -1223,16 +1373,6 @@
 			(type default)
 		)
 		(uuid "697406cc-25bf-4519-93a9-24eee09152a2")
-	)
-	(wire
-		(pts
-			(xy 80.01 158.75) (xy 88.9 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6da423b8-de83-4184-aeca-05f99e883fc1")
 	)
 	(wire
 		(pts
@@ -1366,7 +1506,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 158.75) (xy 72.39 158.75)
+			(xy 63.5 158.75) (xy 88.9 158.75)
 		)
 		(stroke
 			(width 0)
@@ -1494,16 +1634,6 @@
 		)
 		(uuid "f6b15601-0905-4668-aa6c-298a476e694a")
 	)
-	(wire
-		(pts
-			(xy 80.01 38.1) (xy 88.9 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9c4722d-8f6a-42f7-9e6c-204a3e0f8e10")
-	)
 	(hierarchical_label "GPIO33"
 		(shape input)
 		(at 177.8 76.2 180)
@@ -1517,7 +1647,7 @@
 	)
 	(hierarchical_label "EN"
 		(shape input)
-		(at 101.6 38.1 0)
+		(at 120.65 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1597,7 +1727,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 89.8652 118.11 0)
 			(effects
 				(font
@@ -2020,7 +2150,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 89.8652 175.26 0)
 			(effects
 				(font
@@ -2199,142 +2329,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 76.2 101.6 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "48b5669e-860e-4c83-93dc-923c8328b30f")
-		(property "Reference" "R17"
-			(at 76.2 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10K"
-			(at 76.2 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 76.2 103.378 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "81586c2f-8a1a-4805-8dc1-2f6077a11dab")
-		)
-		(pin "2"
-			(uuid "1d766998-99b1-4d3a-817f-14cf7e53fcd6")
-		)
-		(instances
-			(project "Capteur_courant_IoT"
-				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e/3db5d4db-b9cb-4c38-a7db-6bccf2858689"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 76.2 158.75 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4d020476-0508-4fd4-93b7-b81b1d02a2f4")
-		(property "Reference" "R19"
-			(at 76.2 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10K"
-			(at 76.2 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 76.2 160.528 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 76.2 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "18c2e18d-a34c-4735-80e3-5288aba40084")
-		)
-		(pin "2"
-			(uuid "b565d01a-ac55-4e3d-8941-ef28539bfe07")
-		)
-		(instances
-			(project "Capteur_courant_IoT"
-				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e/3db5d4db-b9cb-4c38-a7db-6bccf2858689"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 25.4 190.5 0)
 		(unit 1)
@@ -2427,7 +2421,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 89.8652 54.61 0)
 			(effects
 				(font
@@ -3401,74 +3395,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 76.2 38.1 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d7f1b3db-4d16-459d-bf72-350b42019930")
-		(property "Reference" "R3"
-			(at 76.2 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10K"
-			(at 76.2 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 76.2 39.878 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 76.2 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "47fa3bfe-ee6e-40a6-804b-ed03e53e68ef")
-		)
-		(pin "2"
-			(uuid "1d09efc3-e6a6-4239-8084-7fa7f153d971")
-		)
-		(instances
-			(project ""
-				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e/3db5d4db-b9cb-4c38-a7db-6bccf2858689"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 189.23 88.9 0)
 		(mirror y)
@@ -3607,6 +3533,73 @@
 			(project ""
 				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e/3db5d4db-b9cb-4c38-a7db-6bccf2858689"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 106.68 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fb8b1cb7-22ed-4e32-b9a4-a70600d95cd6")
+		(property "Reference" "D3"
+			(at 106.3625 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAT54WS"
+			(at 106.426 47.244 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 106.68 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 106.68 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b8af5e7e-10c3-43a0-a5bb-3740d0d7952f")
+		)
+		(pin "2"
+			(uuid "60529e81-0011-4206-9c01-2ed642868050")
+		)
+		(instances
+			(project "Capteur_courant_IoT"
+				(path "/9ec92dd4-bf7f-4382-b228-27fa2b950a1e/3db5d4db-b9cb-4c38-a7db-6bccf2858689"
+					(reference "D3")
 					(unit 1)
 				)
 			)

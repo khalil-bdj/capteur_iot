@@ -1,4 +1,4 @@
-25599326627363245
+25604580434152577
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -67865,6 +67865,13 @@ Yellow 5381 Series LED
 2
 2
 Library_iot
+CONN_ED555&slash_2DS_OST
+
+ED555/2DS 
+0
+2
+2
+Library_iot
 GCT_USB4105-GF-A
 
 
@@ -67872,12 +67879,26 @@ GCT_USB4105-GF-A
 16
 16
 Library_iot
+IND_LQH2HPZ2R2MJRL
+
+
+0
+2
+2
+Library_iot
 SW_TS02-66-60-BK-160-LCR-D
 
 
 0
 4
 4
+Library_iot
+Sans titre
+
+
+0
+0
+0
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
