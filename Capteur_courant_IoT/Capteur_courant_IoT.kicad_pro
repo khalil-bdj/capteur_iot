@@ -508,7 +508,7 @@
       "plot": "gerber/23-07-2025/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Capteur_courant_IoT.stl",
       "svg": "",
       "vrml": ""
     },
