@@ -1,0 +1,234 @@
+/*#include <Arduino.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <Wire.h>
+
+//
+const char* ssid = "FabLab";
+const char* password = "FabLab2023";
+const char* mqtt_server = "192.168.1.102";
+const char* topic = "CLICK/FabLab/Laser/Gravograph/timer";
+const char* ID = "CateurCourant1";
+const int mqtt_port = 1883;
+
+// Pin
+const int ledPin = 4;
+const int buttonPin = 5;
+
+
+bool lastButton = 0;
+
+long time_lastsend = 0;
+const long time_of_send = 100;
+
+
+bool callback_value = 0;
+char last_string[7] = {'H', 'e', 'l', 'l', 'o', '1','\0'};
+
+//timer interuptible
+long last_time = 0; // time after reset but before new timer
+bool state_machine = 0;
+bool last_state_machine = 0;
+long start_current_timer = 0; //millis de debut du timer actuel
+long timing_current = 0; //last time + millis - start_current_timer
+bool machine_start_from_reset = 0;
+
+
+
+
+
+
+
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+long lastMsg = 0;
+char msg[50];
+int value = 0;
+
+// put function declarations here:
+void setup_wifi();
+void reconnect();
+float get_timer();
+bool check_button();
+char* get_timer_hh_mm();
+void callback(char* topic, byte* payload, unsigned int length);
+long get_full_timer();
+void is_machin_running();
+
+void setup() {
+  Serial.begin(9600);
+  // default settings
+  Serial.println("yyy");
+
+  setup_wifi();
+  client.setServer(mqtt_server, mqtt_port);
+  client.setCallback(callback);
+
+
+
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  client.loop();
+
+  is_machin_running();
+  get_full_timer();
+
+  if (millis() - time_lastsend > time_of_send){
+    if (callback_value){
+      callback_value = 0;
+      return;
+    }
+    char* result = get_timer_hh_mm();
+    if (strcmp(result, last_string) != 0){
+      client.publish(topic, result);
+      strncpy(last_string, result, sizeof(last_string));
+      last_string[sizeof(last_string) - 1] = '\0';
+      time_lastsend = millis();
+      Serial.println(get_timer_hh_mm());
+    }
+  }
+  delay(10);
+}
+
+
+
+// put function definitions here:
+void setup_wifi() {
+  delay(10);
+
+  // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect(ID)) {
+      Serial.println("connected");
+      // Subscribe
+      client.subscribe(topic);
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+void callback(char* topic, byte* payload, unsigned int length){
+  // Convertir payload en chaîne de caractères C
+  callback_value = 1;
+  char message[length + 1]; // +1 pour le caractère nul
+  memcpy(message, payload, length);
+  message[length] = '\0'; // Ajouter le caractère de fin de chaîne
+  if (strcmp(message, "reset") == 0) {
+    Serial.println("Commande RESET reçue !");
+    last_time = 0;
+    start_current_timer = millis();
+  }
+}
+
+
+
+char* get_timer_hh_mm(){
+  int timer = int(get_timer());
+  int minutes = timer / 60;
+  int secondes = timer - minutes * 60;
+
+  static char result[7];
+  if (minutes > 99){
+    snprintf(result, sizeof(result), "%03d:%02d", minutes, secondes);
+    return result;
+  }
+  else 
+  {
+    snprintf(result, sizeof(result), "%02d:%02d", minutes, secondes);
+    return result;
+  }
+
+}
+
+float get_timer(){
+  long timer = 0;
+  timer = timing_current;
+  float secondes = (float)timer /1000;
+  return secondes;
+}
+
+bool check_button(){
+  bool buttonState = digitalRead(buttonPin);
+  bool value = 0;
+  if (lastButton == HIGH && buttonState == LOW) {
+    Serial.println("Bouton appuyé");
+    value = 1;
+  }
+  lastButton = buttonState;
+
+  return value;
+}
+
+void is_machin_running(){
+  last_state_machine = state_machine;
+  if (!digitalRead(buttonPin)){
+    state_machine = 1;
+  }
+  else {
+    state_machine = 0;
+  }
+  
+}
+
+long get_full_timer(){
+  if (machine_start_from_reset == 0){
+    timing_current = 0;
+  }
+  if(state_machine == 0 && last_state_machine == 1){
+    last_time = last_time + millis() - start_current_timer; 
+    timing_current = last_time;
+    
+    return timing_current;
+  }
+  else if(state_machine == 1 && last_state_machine == 0){
+    start_current_timer = millis(); 
+    machine_start_from_reset = 1;
+    return timing_current;
+  }
+  else if( state_machine == 1){
+    timing_current = last_time + millis() - start_current_timer; 
+    return timing_current;
+  }
+  else if( state_machine == 0){
+    timing_current = last_time; 
+    return timing_current;
+  }
+  long t =0;
+  return t;
+}
+*/

@@ -1,0 +1,91 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_ADS1X15.h>
+
+Adafruit_ADS1015 ads;
+
+const int bufferSize = 10;  // Taille de la moyenne glissante
+float buffer[bufferSize];
+int bufferIndex = 0;
+bool bufferFull = false;
+float racine_de_2 = 1.41421356;
+
+int conteur = 0;
+int print_time = 100;
+
+
+
+void setup() {
+  pinMode(27, OUTPUT);
+  digitalWrite(27, HIGH);
+
+  Serial.begin(9600);
+  ads.setGain(GAIN_FOUR);  // ±1.024V = 0.5mV/bit
+  ads.begin();
+}
+float mesure_courant_eff();
+
+void loop() {
+
+  float value = mesure_courant_eff();
+  
+
+  
+
+  // Ajouter à la moyenne glissante 
+  buffer[bufferIndex] = value; 
+  bufferIndex = (bufferIndex + 1) % bufferSize;  
+  if (bufferIndex == 0) bufferFull = true; 
+
+  
+
+  // Calcul de la moyenne 
+  float sum = 0; 
+  int count = bufferFull ? bufferSize : bufferIndex; 
+  for (int i = 0; i < count; i++) { 
+    sum += buffer[i]; 
+  }
+
+  float averageVoltage = sum / count;
+
+
+  float current = averageVoltage * 20 / racine_de_2;
+  float puissance = current * 230;
+  conteur +=1;
+
+  if (conteur == print_time){
+    Serial.print("Tension (moyenne glissante): ");
+    Serial.print(averageVoltage, 3);
+    Serial.println(" V");
+    Serial.print("Courant  (moyenne glissante): ");
+    Serial.print(current, 3);
+    Serial.println(" A");
+    Serial.print("Puissance (moyenne glissante): ");
+    Serial.print(puissance, 3);
+    Serial.println(" W");
+    Serial.println();
+    conteur = 0;
+  }
+
+  delay(10);      
+
+}
+
+float mesure_courant_eff(){ // return tension
+  int16_t tableau = 0;
+  int16_t value = 0;
+
+  for (int i = 0; i < 20; i++){
+    value = ads.readADC_Differential_0_3();
+    if (value < 0){
+      value = 0 - value;
+    }
+    
+    if(value > tableau){
+      tableau = value;
+    }
+  }
+
+  float result = tableau * 0.0005;
+  return result;
+}

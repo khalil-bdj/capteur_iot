@@ -1,0 +1,29 @@
+
+
+variables globales :
+- topic
+- pin
+- id
+
+
+Fonction communication envoie:
+- envoie temps d'utilisation de la machine
+- envoie consomation dernière minute/heure/reset
+
+Fonction communication lecture:
+- reception ordre de reset
+
+
+
+objet machine :
+    données:
+    - temps allumé depuis reset
+    - consomation depuis reset
+    - heure dernier reset
+    - 
+
+    fonction :
+    - lecture consomation actuelle
+    - init, pin capteur
+    - calcule temps 
+    - reset timer
